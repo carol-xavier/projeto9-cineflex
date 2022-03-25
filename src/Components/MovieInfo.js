@@ -12,27 +12,27 @@ function MovieInfo() {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idMovie}/showtimes/`)
         promise.then(response => {
             const data = response.data.days;
-            console.log("deu certo", data);
+            
             setSessions(data);
         })
 
-        promise.catch(response => {
-            const { data } = response;
-            console.log(response.error.status);
-        })
+        // promise.catch(response => {
+        //     const { data } = response;
+        //     console.log(response.error.status);
+        // })
     }, [])
 
     return sessions ? (
         <section className="movie-sessions">
             <Header />
+            <h1>Selecione o horário</h1>
             <div>
-                <h1>Selecione o horário</h1>
                 {sessions.map((session) => {
                     return <div key={session.id}>
                         <h6>{session.weekday} - {session.date}</h6>
                     <div className="session-times">
                         {(session.showtimes).map(movie => {
-                            return <div className="session-time">{movie.name}</div>
+                            return <Link to={`/sessao/${movie.id}`}><div className="session-time" key={movie.id}>{movie.name}</div></Link>
                         })}
                     </div>
                     </div>

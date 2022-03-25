@@ -54,3 +54,20 @@ header {
     margin-right: 3px;
     
 }
+
+.bookSession .seats{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.bookSession .seat-option {
+    width: 26px;
+    height: 26px;
+    left: 325px;
+    top: 291px;
+
+    background: #C3CFD9;
+    border: 1px solid #808F9D;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
