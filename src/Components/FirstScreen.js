@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Header from './Header';
+import MovieInfo from './MovieInfo';
 
 function FirstScreen() {
     const [movies, setMovies] = useState([]);
@@ -20,14 +21,16 @@ function FirstScreen() {
     return movies ? (
         <section className='first-screen'>
             <Header />
-            <h2>Selecione o filme</h2>
+            <h1>Selecione o filme</h1>
             <div className="movie-collection">
                 
                     {
                         movies.map(movie => {
                             const { id, posterURL, title } = movie;
                             return <div className='poster-container' key={id}>
+                                <Link to={`/filme/${id}`}>
                                 <img className='poster' src={posterURL} alt={title}  />
+                                </Link>
                             </div>
                         })
                     }
@@ -40,3 +43,5 @@ function FirstScreen() {
 }
 
 export default FirstScreen;
+
+//to={`/filme/${id}`} 
