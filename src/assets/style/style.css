@@ -60,7 +60,7 @@ header {
     flex-wrap: wrap;
 }
 
-.bookSession .seat-option {
+.bookSession .seat-option .disponível {
     width: 26px;
     height: 26px;
     left: 325px;
@@ -71,3 +71,28 @@ header {
     box-sizing: border-box;
     border-radius: 12px;
 }
+
+.bookSession .seat-option .indisponível {
+    width: 26px;
+    height: 26px;
+    left: 325px;
+    top: 291px;
+
+    background: yellowgreen;
+    border: 1px solid #808F9D;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.bookSession .seat-option .selected {
+    width: 26px;
+    height: 26px;
+    left: 325px;
+    top: 291px;
+
+    background: red;
+    border: 1px solid #808F9D;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
