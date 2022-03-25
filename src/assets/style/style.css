@@ -96,3 +96,14 @@ header {
     border-radius: 12px;
 }
 
+footer img{
+    width: 64px;
+    height: 89px;
+    left: 10px;
+    bottom: 14px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+

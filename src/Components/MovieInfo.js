@@ -3,9 +3,13 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
+import Footer from "./Footer";
 
 function MovieInfo() {
     const { idMovie } = useParams();
+
+    const [wholeInfo, setWholeInfo] = useState({});
+
     const [sessions, setSessions] = useState([]);
 
     useEffect(() => {
@@ -13,14 +17,12 @@ function MovieInfo() {
         promise.then(response => {
             const data = response.data.days;
             
+            setWholeInfo(response.data);
             setSessions(data);
         })
-
-        // promise.catch(response => {
-        //     const { data } = response;
-        //     console.log(response.error.status);
-        // })
     }, [])
+
+    console.log(wholeInfo);
 
     return sessions ? (
         <section className="movie-sessions">
@@ -39,6 +41,8 @@ function MovieInfo() {
                 })
                 }
             </div>
+
+            <Footer image={wholeInfo.posterURL} movieTitle={wholeInfo.title}/>
         </section>
     ) : (
         <p>Carregando...</p>

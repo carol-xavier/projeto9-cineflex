@@ -6,12 +6,14 @@ import Header from './Header';
 
 
 function BookSession(props) {
-    const { id, isAvailable, name } = props;
+    const { index, isAvailable, name, callbackIDs, callbackNames } = props;
 
     const [select, setSelect] = useState(false);
 
     return isAvailable ? (<div className="seat-option">
-                    <div className={select ? 'selected' : 'disponível'} onClick={()=> setSelect(!select)}>{name}</div>
+                    <div className={select ? 'selected' : 'disponível'} onClick={()=> {setSelect(!select); 
+                        callbackIDs(index);
+                        callbackNames(name)}}>{name}</div>
                     </div>
                     ) : (
                 <div className="seat-option" onClick={()=> alert("Esse assento não está disponível")}>
