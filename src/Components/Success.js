@@ -6,6 +6,23 @@ function Success() {
     const location = useLocation()
     const { name, cpf, seats, movie, day, hora } = location.state;
 
+    const tickets = seats.filter(filterSeats);
+
+    function filterSeats(seat){
+        let counter = 0;
+        for (let i = 0; i < seats.length; i++) {
+                if (seats[i] === seat) {
+                    counter++;
+            }
+        }
+              if (counter % 2 !== 0) {
+                return seat;
+            }
+    }
+
+    const ticket = tickets.filter((item, index) => tickets.indexOf(item) === index);
+
+    console.log(ticket);
 
     return (
         <section className="success-page">
@@ -20,12 +37,14 @@ function Success() {
             </div>
             <div className="tickets">
                 <h2>Ingressos</h2>
-                <p>{seats}</p>
+                {ticket.map((assento, index) => {
+                    return <p key={index}>Assento {assento}</p>
+                })}
             </div>
             <div className="buyer">
                 <h2>Comprador</h2>
-                <p>{name}</p>
-                <p>{cpf}</p>
+                <p>Nome: {name}</p>
+                <p>CPF: {cpf}</p>
             </div>
 
             <Link to={"/"}>
