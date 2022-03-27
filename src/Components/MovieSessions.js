@@ -32,7 +32,9 @@ function MovieSessions() {
                         <h6>{session.weekday} - {session.date}</h6>
                         <div className="session-times">
                             {(session.showtimes).map(movie => {
-                                return <Link to={`/sessao/${movie.id}`}><div className="session-time" key={movie.id}>{movie.name}</div></Link>
+                                return <Link to={`/sessao/${movie.id}`}>
+                                    <div className="session-time" key={movie.id}>{movie.name}</div>
+                                    </Link>
                             })}
                         </div>
                     </div>

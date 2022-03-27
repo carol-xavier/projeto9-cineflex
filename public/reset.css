@@ -44,12 +44,16 @@ table {
 
 a {
 	text-decoration: none;
-  }
+}
   
-  a:hover {
+a:hover {
 	text-decoration: underline;
-  }
-  
-  * {
-	  box-sizing: border-box;
-	}
+}
+
+Link {
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
