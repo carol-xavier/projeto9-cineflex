@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Header from './Header';
-import MovieSessions from './MovieSessions';
 
 function FirstScreen() {
     const [movies, setMovies] = useState([]);
@@ -14,7 +13,6 @@ function FirstScreen() {
             setMovies(response.data);
         });
 
-        // promise.catch(response.error.status); 
     }, []);
 
 
@@ -43,5 +41,3 @@ function FirstScreen() {
 }
 
 export default FirstScreen;
-
-//to={`/filme/${id}`} 

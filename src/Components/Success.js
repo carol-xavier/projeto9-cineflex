@@ -22,8 +22,6 @@ function Success() {
 
     const ticket = tickets.filter((item, index) => tickets.indexOf(item) === index);
 
-    console.log(ticket);
-
     return (
         <section className="success-page">
             <Header />

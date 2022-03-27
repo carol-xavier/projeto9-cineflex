@@ -60,7 +60,6 @@ function MovieSeats() {
             cpf: input2
         };
         const promise = axios.post('https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many', object);
-        // promise.then(filterSeatNames(getSeatNames));
     }
 
     return spots ? (
@@ -97,12 +96,13 @@ function MovieSeats() {
             </div>
             <div className="buyer-name">
                 <h2>Nome do Comprador:</h2>
-                <input value={input} onInput={e => setInput(e.target.value)} placeholder="Digite seu nome..."></input>
+                <input required value={input} onInput={e => setInput(e.target.value)} placeholder="Digite seu nome..."></input>
             </div>
             <div className="buyer-cpf">
                 <h2>CPF do Comprador:</h2>
-                <input value={input2} onInput={e => setInput2(e.target.value)} placeholder="Digite seu CPF..."></input>
+                <input required value={input2} onInput={e => setInput2(e.target.value)} placeholder="Digite seu CPF..."></input>
             </div>
+
 
             <Link to={'/sucesso'} state={{
                 name: input, cpf: input2,
