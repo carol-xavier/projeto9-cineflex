@@ -1,7 +1,7 @@
 function Header(){
     return (
         <header>
-            <h1>CINEFLEX</h1>
+            <h3>CINEFLEX</h3>
         </header>
     )
 }

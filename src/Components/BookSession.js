@@ -11,13 +11,13 @@ function BookSession(props) {
     const [select, setSelect] = useState(false);
 
     return isAvailable ? (<div className="seat-option">
-                    <div className={select ? 'selected' : 'disponível'} onClick={()=> {setSelect(!select); 
+                    <div className={select ? 'selected seat' : 'available seat'} onClick={()=> {setSelect(!select); 
                         callbackIDs(index);
                         callbackNames(name)}}>{name}</div>
                     </div>
                     ) : (
                 <div className="seat-option" onClick={()=> alert("Esse assento não está disponível")}>
-                    <div className={'indisponível'}>{name}</div>
+                    <div className={'unavailable seat'}>{name}</div>
                 </div>)
     
 }

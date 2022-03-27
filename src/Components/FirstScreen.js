@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Header from './Header';
-import MovieInfo from './MovieInfo';
+import MovieSessions from './MovieSessions';
 
 function FirstScreen() {
     const [movies, setMovies] = useState([]);

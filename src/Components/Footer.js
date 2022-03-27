@@ -1,14 +1,26 @@
 
-function Footer(props){
-    const {image, movieTitle} = props;
+function Footer(props) {
+    const { image, movieTitle, day, hora } = props;
 
-    return <footer>
-        <img src={image} />
-        <div className="movie-session">
-        <p>{movieTitle}</p>
-        <p>Weekday e hora</p>
+    return !day ? (<footer>
+        <div className="img-container">
+            <img src={image} />
         </div>
-    </footer>
+        <div className="movie-session">
+            <p>{movieTitle}</p>
+        </div>
+    </footer>) : (
+        <footer>
+            <div className="img-container">
+                <img src={image} />
+            </div>
+            <div className="movie-session">
+                <p>{movieTitle}</p>
+                <p> {day} - {hora}</p>
+            </div>
+        </footer>
+
+    )
 }
 
 export default Footer;
